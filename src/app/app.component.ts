@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  pixels = new Array(1000).fill(0);
+  pixels = new Array(4088).fill(0);
 }
