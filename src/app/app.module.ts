@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PixelComponent } from './pixel/pixel.component';
+import { PixelFillDirective } from './pixel/pixel-fill.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PixelComponent
+    PixelComponent,
+    PixelFillDirective
   ],
   imports: [
     BrowserModule

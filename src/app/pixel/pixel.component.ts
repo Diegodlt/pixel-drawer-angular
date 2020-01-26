@@ -3,7 +3,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, HostListener, Output
 @Component({
     selector: 'pixel',
     template: `
-        <div></div>
+        <div pixelFill></div>
     `,
     styles: [`
         div {
