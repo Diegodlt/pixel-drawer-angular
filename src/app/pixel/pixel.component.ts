@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { PixelFillDirective } from './pixel-fill.directive';
 
 @Component({
     selector: 'pixel',
@@ -20,7 +21,14 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, HostListener, Output
 
 export class PixelComponent implements OnInit {
 
+    @ViewChild(PixelFillDirective, {static: false})
+    pixelDirective: PixelFillDirective;
+
     constructor() { }
 
     ngOnInit() { }
+
+    clearPixel(){
+        this.pixelDirective.clearPixel()
+    }
 }

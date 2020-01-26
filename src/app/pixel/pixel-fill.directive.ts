@@ -25,4 +25,8 @@ export class PixelFillDirective {
         this.pixelService.clicked = false;
     }
 
+    clearPixel(){
+        this.elRef.nativeElement.style['background-color'] = "#fff";
+    }
+
 }
