@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pixel-drawer';
+  
+  pixels = new Array(1000).fill(0);
 }

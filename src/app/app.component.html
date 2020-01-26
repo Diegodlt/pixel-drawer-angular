@@ -1,1 +1,9 @@
-<pixel></pixel>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <ng-container *ngFor="let pixelRow of pixels; index as i">
+                <pixel></pixel>
+            </ng-container>
+        </div>
+    </div>
+</div>
