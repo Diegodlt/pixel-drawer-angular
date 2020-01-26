@@ -1,7 +1,3 @@
-.container{
-    height: 100%;
-}
-
 .row{
     height: 100%;
     align-items: center;
@@ -15,4 +11,8 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.controls{
+    margin: 40px 0;
 }

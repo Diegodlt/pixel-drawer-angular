@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 export class PixelService {
 
     private _clicked = false;
-    currentColor = 'blue';
+    currentColor = '';
 
     constructor() { }
 

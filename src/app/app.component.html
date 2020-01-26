@@ -1,5 +1,12 @@
 <div class="container">
     <div class="row">
+        <div class="col-4">
+            <div class="controls">
+                <input type="color" class="form-control" (change)="onColorChange($event)" value="#ffffff">
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-8 board">
             <ng-container *ngFor="let pixelRow of pixels; index as i">
                 <pixel></pixel>
