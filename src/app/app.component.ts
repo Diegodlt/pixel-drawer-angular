@@ -1,6 +1,5 @@
 import { Component,  ViewChildren, QueryList } from '@angular/core';
 import { PixelService } from './pixel/pixel.service';
-import { PixelComponent } from './pixel/pixel.component';
 import { PixelFillDirective } from './pixel/pixel-fill.directive';
 
 @Component({
@@ -20,8 +19,8 @@ export class AppComponent {
   ){}
 
   onClearPixel(){
-    this.pixelsRef.forEach(el=>{
-      el.clearPixel();
+    this.pixelsRef.forEach(pixel=>{
+      pixel.clearPixel();
     })
   }
 
