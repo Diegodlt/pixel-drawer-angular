@@ -4,16 +4,21 @@ import { PixelFillDirective } from '../pixel/pixel-fill.directive';
 @Component({
   selector: 'pixel-board',
   template: `
-    <ng-container *ngFor="let pixelRow of pixelBoard; index as i">
-        <ng-container *ngFor="let pixel of pixelRow">
-            <div class="pixel" pixelFill></div>
-        </ng-container>
-    </ng-container>
+    <div class="board" [ngStyle]="{'height.px': PIXEL_SIZE*rows, 'width.px': PIXEL_SIZE*cols}">
+      <ng-container *ngFor="let pixelRow of pixelBoard">
+          <ng-container *ngFor="let pixel of pixelRow">
+              <div class="pixel" [ngStyle]="{'height.px': PIXEL_SIZE, 'width.px': PIXEL_SIZE}" pixelFill></div>
+          </ng-container>
+      </ng-container>
+  </div>
 
   `,
   styleUrls: ['./pixel-board.component.scss']
 })
+
 export class PixelBoardComponent implements OnInit, OnChanges{
+
+  readonly PIXEL_SIZE = 10;
 
   pixelBoard: Array<Array<any>>;
 
