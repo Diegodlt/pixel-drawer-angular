@@ -1,6 +1,7 @@
 import { Component,  ViewChildren, QueryList } from '@angular/core';
 import { PixelService } from './pixel/pixel.service';
 import { PixelComponent } from './pixel/pixel.component';
+import { PixelFillDirective } from './pixel/pixel-fill.directive';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,8 @@ export class AppComponent {
   
   pixels = new Array(4088).fill(0);
 
-  @ViewChildren(PixelComponent)
-  pixelsRef: QueryList<PixelComponent>;
+  @ViewChildren(PixelFillDirective)
+  pixelsRef: QueryList<PixelFillDirective>;
 
   constructor(
     private pixelService: PixelService
