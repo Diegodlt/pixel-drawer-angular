@@ -1,4 +1,4 @@
-import { Component,  ViewChildren, QueryList } from '@angular/core';
+import { Component,  ViewChildren, QueryList, OnInit } from '@angular/core';
 import { PixelService } from './pixel/pixel.service';
 import { PixelFillDirective } from './pixel/pixel-fill.directive';
 
@@ -7,22 +7,14 @@ import { PixelFillDirective } from './pixel/pixel-fill.directive';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  
-  pixels = new Array(4088).fill(0);
+export class AppComponent implements OnInit {
 
-  @ViewChildren(PixelFillDirective)
-  pixelsRef: QueryList<PixelFillDirective>;
+  ngOnInit(){
+  }
 
   constructor(
     private pixelService: PixelService
   ){}
-
-  onClearPixel(){
-    this.pixelsRef.forEach(pixel=>{
-      pixel.clearPixel();
-    })
-  }
 
   onColorChange(event){
     this.pixelService.currentColor = event.target.value;
