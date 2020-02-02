@@ -1,6 +1,7 @@
-import { Component,  ViewChildren, QueryList, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { PixelService } from './pixel/pixel.service';
-import { PixelFillDirective } from './pixel/pixel-fill.directive';
+import { PixelBoardComponent } from './pixel-board/pixel-board.component';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,11 @@ import { PixelFillDirective } from './pixel/pixel-fill.directive';
 })
 export class AppComponent implements OnInit {
 
-  cols = 50;
-  rows = 50;
+  cols = 40;
+  rows = 40;
+
+  @ViewChild(PixelBoardComponent, {static: false})
+  pixelBoard: PixelBoardComponent;
 
   ngOnInit(){
   }
@@ -28,7 +32,7 @@ export class AppComponent implements OnInit {
   }
 
   onClearPixel(){
-
+    this.pixelBoard.clearPixels();
   }
 
   onColorChange(event){

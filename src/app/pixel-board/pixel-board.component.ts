@@ -18,7 +18,7 @@ import { PixelService } from '../pixel/pixel.service';
 
 export class PixelBoardComponent implements OnInit, OnChanges{
 
-  readonly PIXEL_SIZE = 10;
+  readonly PIXEL_SIZE = 15;
 
   pixelBoard: Array<Array<any>>;
 
@@ -54,6 +54,12 @@ export class PixelBoardComponent implements OnInit, OnChanges{
     });
   }
 
+  clearPixels(){
+    this.pixelsRef.forEach(pixel=>{
+      pixel.clearPixel();
+    });
+  }
+
   @HostListener('mouseleave')
   onMouseLeave(){
     this.pixelService.clicked = false;
@@ -62,11 +68,5 @@ export class PixelBoardComponent implements OnInit, OnChanges{
   addRow(){
     this.pixelBoard.push(new Array(this.cols).fill(0));
   }
-
-  onClearPixel(){
-    this.pixelsRef.forEach(pixel=>{
-      pixel.clearPixel();
-    });
-  }
-
+  
 }
