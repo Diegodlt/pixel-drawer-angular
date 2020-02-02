@@ -40,10 +40,10 @@ export class PixelBoardComponent implements OnInit, OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges){
-    if(changes.cols){
+    if(changes.cols && !changes.cols.firstChange){
       this.addColumn();
     }
-    if(changes.rows){
+    if(changes.rows && !changes.rows.firstChange){
       this.addRow();
     }
   }
