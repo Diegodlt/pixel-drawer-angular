@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     this.rows += 1;
   }
 
-  onClearPixel(){
+  onClearBoard(){
     this.pixelBoard.clearPixels();
   }
 

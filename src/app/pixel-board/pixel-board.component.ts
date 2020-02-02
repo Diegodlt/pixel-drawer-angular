@@ -54,6 +54,10 @@ export class PixelBoardComponent implements OnInit, OnChanges{
     });
   }
 
+  addRow(){
+    this.pixelBoard.push(new Array(this.cols).fill(0));
+  }
+
   clearPixels(){
     this.pixelsRef.forEach(pixel=>{
       pixel.clearPixel();
@@ -64,9 +68,4 @@ export class PixelBoardComponent implements OnInit, OnChanges{
   onMouseLeave(){
     this.pixelService.clicked = false;
   }
-
-  addRow(){
-    this.pixelBoard.push(new Array(this.cols).fill(0));
-  }
-  
 }
