@@ -5,3 +5,12 @@
     border-color: rgba( 160, 160, 255, 0.4);
     box-sizing: border-box;
 }
+
+.board{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

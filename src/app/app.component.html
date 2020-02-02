@@ -3,13 +3,13 @@
         <div class="col-4">
             <div class="controls">
                 <input type="color" class="form-control" (change)="onColorChange($event)" value="#ffffff">
-                <!-- <button class="btn btn-outline-secondary" (click)="onClearPixel()">Clear Pixels</button>
+                <button class="btn btn-outline-secondary" (click)="onClearPixel()">Clear Pixels</button>
                 <button class="btn btn-outline-primary" (click)="addRow()">Add row</button>
-                <button class="btn btn-outline-primary" (click)="addColumn()">Add Column</button> -->
+                <button class="btn btn-outline-primary" (click)="addCol()">Add Column</button>
             </div>
         </div>
     </div>
     <div class="row justify-content-center">
-        <pixel-board [rows]="50" [cols]="50"></pixel-board>
+        <pixel-board [rows]="rows" [cols]="cols"></pixel-board>
     </div>
 </div>
