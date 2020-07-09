@@ -25,10 +25,12 @@ export class AppComponent implements OnInit {
 
   addCol(){
     this.cols += 1;
+    this.pixelBoard.addColumn();
   }
 
   addRow(){
     this.rows += 1;
+    this.pixelBoard.addRow();
   }
 
   onClearBoard(){

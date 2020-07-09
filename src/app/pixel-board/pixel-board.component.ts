@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, QueryList, Input, OnChanges, SimpleChange, SimpleChanges, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, Input, HostListener } from '@angular/core';
 import { PixelFillDirective } from '../pixel/pixel-fill.directive';
 import { PixelService } from '../pixel/pixel.service';
 
@@ -16,7 +16,7 @@ import { PixelService } from '../pixel/pixel.service';
   styleUrls: ['./pixel-board.component.scss']
 })
 
-export class PixelBoardComponent implements OnInit, OnChanges{
+export class PixelBoardComponent implements OnInit{
 
   readonly PIXEL_SIZE = 15;
 
@@ -36,15 +36,6 @@ export class PixelBoardComponent implements OnInit, OnChanges{
     this.pixelBoard = new Array(this.rows);
     for(let i = 0; i < this.rows; i++){
       this.pixelBoard[i] = new Array(this.cols).fill(0);
-    }
-  }
-
-  ngOnChanges(changes: SimpleChanges){
-    if(changes.cols && !changes.cols.firstChange){
-      this.addColumn();
-    }
-    if(changes.rows && !changes.rows.firstChange){
-      this.addRow();
     }
   }
 
