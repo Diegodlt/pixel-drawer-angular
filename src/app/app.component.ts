@@ -10,9 +10,6 @@ import { PixelBoardComponent } from './pixel-board/pixel-board.component';
 })
 export class AppComponent implements OnInit {
 
-  cols = 40;
-  rows = 40;
-
   @ViewChild(PixelBoardComponent, {static: false})
   pixelBoard: PixelBoardComponent;
 
@@ -24,12 +21,10 @@ export class AppComponent implements OnInit {
   ){}
 
   addCol(){
-    this.cols += 1;
     this.pixelBoard.addColumn();
   }
 
   addRow(){
-    this.rows += 1;
     this.pixelBoard.addRow();
   }
 

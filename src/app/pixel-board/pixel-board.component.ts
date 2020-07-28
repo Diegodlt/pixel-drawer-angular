@@ -19,11 +19,9 @@ import { PixelService } from '../pixel/pixel.service';
 export class PixelBoardComponent implements OnInit{
 
   readonly PIXEL_SIZE = 15;
-
+  cols = 40;
+  rows = 40;
   pixelBoard: Array<Array<any>>;
-
-  @Input() rows: number;
-  @Input() cols: number;
 
   @ViewChildren(PixelFillDirective)
   pixelsRef: QueryList<PixelFillDirective>;
@@ -40,12 +38,14 @@ export class PixelBoardComponent implements OnInit{
   }
 
   addColumn(){
+    this.cols += 1;
     this.pixelBoard.forEach(pixelRow=>{
       pixelRow.push(0);
     });
   }
 
   addRow(){
+    this.rows += 1;
     this.pixelBoard.push(new Array(this.cols).fill(0));
   }
 
