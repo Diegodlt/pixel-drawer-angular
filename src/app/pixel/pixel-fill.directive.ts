@@ -10,13 +10,13 @@ export class PixelFillDirective {
         private pixelService: PixelService
     ) { }
 
-    @HostListener('mouseenter', ['$event']) onHover(event){
+    @HostListener('mouseenter') onHover(){
         if(this.pixelService.clicked){
             this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor;
         }
     }
     
-    @HostListener('mousedown', ['$event']) onMouseDown(event){
+    @HostListener('mousedown') onMouseDown(){
         this.elRef.nativeElement.style['background-color'] = this.pixelService.currentColor;
         this.pixelService.clicked = true;
     }
